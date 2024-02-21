@@ -3,12 +3,13 @@ import { decrement, increment } from '../Redux/Features/Counter/CounterSlice'
 
 const Counter = () => {
     const count = useSelector(state => state.counter.count)
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    
     return (
         <div>
-            <button onClick={() => dispatch(increment())}>Increment</button>
-            <div className='py-5'>{count}</div>
-            <button onClick={() => dispatch(decrement())}>Decrement</button>
+            <button className='bg-green-600 text-white px-3 py-1 rounded-md' onClick={() => dispatch(increment())}>Increment</button>
+            <div className='py-5 text-center'>{count}</div>
+            <button className='bg-red-600 text-white px-3 py-1 rounded-md' onClick={() => dispatch(decrement())}>Decrement</button>
         </div>
     )
 }
